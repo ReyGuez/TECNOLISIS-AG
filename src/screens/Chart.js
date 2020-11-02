@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useTheme } from '@material-ui/core/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
+import moment from 'moment';
 
 // Generate Sales Data
 function createData(time, amount) {
@@ -20,12 +21,15 @@ const data = [
   createData('24:00', undefined),
 ];
 
-export default function Chart() {
+export default function Chart(props) {
+  props.data.map((x) => {
+    x.hora = moment(x.fecha).format('HH:mm:ss');
+  })
   const theme = useTheme();
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Lastest Values</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
