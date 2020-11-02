@@ -50,7 +50,7 @@ export default function Orders(props) {
               Object.keys(props.data[0]).map((x, y) => {
                 if (y >= 1) {
                   return (
-                    <TableCell align={"left"}>{x.toUpperCase()}</TableCell>
+                    <TableCell style={{fontWeight: 'bold'}} align={"left"}>{x.toUpperCase()}</TableCell>
                   )
                 }
               }
