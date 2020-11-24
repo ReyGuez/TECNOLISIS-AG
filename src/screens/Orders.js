@@ -42,7 +42,7 @@ export default function Orders(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Lastest Values</Title>
+      <Title>Último valores</Title>
       <Table size="medium">
         <TableHead>
           <TableRow>
@@ -72,9 +72,9 @@ export default function Orders(props) {
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          See more orders
-        </Link>
+        {/* <Link color="primary" href="#" onClick={preventDefault}>
+          Ver más valores
+        </Link> */}
       </div>
     </React.Fragment>
   );
