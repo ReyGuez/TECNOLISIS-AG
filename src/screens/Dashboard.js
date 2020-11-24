@@ -139,7 +139,13 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   useEffect(() => {
-    fetch('http://localhost:3306/api/get_values')
+    fetch('http://tecnolisis.com/api/get_values', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
       .then(response => response.json())
       .then(e => {
         setdata(e);
@@ -193,11 +199,11 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             {/* Chart */}
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <Paper className={fixedHeightPaper}>
                 <Chart data={data} />
               </Paper>
-            </Grid>
+            </Grid> */}
             {/* Recent Deposits */}
             {/* <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
