@@ -42,7 +42,7 @@ export default function Orders(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Último valores</Title>
+      <Title>Últimos valores</Title>
       <Table size="medium">
         <TableHead>
           <TableRow>
